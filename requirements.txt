@@ -1,0 +1,22 @@
+# ── Core Scientific Stack ───────────────────────────────────
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+
+# ── Audio Processing ────────────────────────────────────────
+librosa>=0.10.0
+soundfile>=0.12.0
+audioread>=3.0.0
+pydub>=0.25.0
+
+# ── ASR: Automatic Speech Recognition ───────────────────────
+openai-whisper>=20231117
+tiktoken>=0.5.0
+
+# ── NLP: Dependency Parsing ─────────────────────────────────
+stanza>=1.7.0
+
+# ── Utilities ────────────────────────────────────────────────
+tqdm>=4.65.0
+colorama>=0.4.6
+regex>=2023.0.0

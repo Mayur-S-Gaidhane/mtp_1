@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+
+# Virtual environments
+mtp1_env/
+.env/
+venv/
+
+# Whisper model cache
+~/.cache/whisper/
+
+# HuggingFace model cache
+~/.cache/huggingface/
+
+# MFA models
+~/mfa_data/
+
+# Large audio files (keep only samples)
+data/audio/*.mp3
+data/audio/*.mp4
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Outputs (figures are generated — no need to push)
+outputs/figures/*.png
+
+# MFA temporary files
+*.log
+*.zip
