@@ -1,22 +1,70 @@
-# ── Core Scientific Stack ───────────────────────────────────
-numpy>=1.24.0
+# ============================================================
+# MTP-1: Acoustic–Linguistic Modelling of Cognitive Constraints
+# Requirements — Updated April 17, 2026
+# ============================================================
+#
+# INSTALL ORDER:
+#   1. System deps first (see README.md Step B)
+#      sudo apt-get install ffmpeg fonts-noto libsndfile1 -y
+#
+#   2. Conda packages (see README.md Step H)
+#      conda install -c conda-forge montreal-forced-aligner -y
+#
+#   3. Then pip install this file:
+#      pip install -r requirements.txt
+#
+# ============================================================
+
+# ── Core Scientific Stack ────────────────────────────────────
+numpy>=2.0.0
 scipy>=1.10.0
 matplotlib>=3.7.0
+pandas>=2.0.0
 
-# ── Audio Processing ────────────────────────────────────────
-librosa>=0.10.0
-soundfile>=0.12.0
-audioread>=3.0.0
-pydub>=0.25.0
+# ── Deep Learning (PyTorch) ──────────────────────────────────
+# WhisperX installs torch 2.8.0 — do not upgrade separately
+torch==2.8.0
+torchaudio==2.8.0
+torchvision==0.23.0
 
 # ── ASR: Automatic Speech Recognition ───────────────────────
-openai-whisper>=20231117
-tiktoken>=0.5.0
+# faster-whisper replaces openai-whisper (torch 2.8.0 compatible)
+faster-whisper>=1.2.0
+
+# ── Alignment: Real Word-Level Timestamps ───────────────────
+# WhisperX provides wav2vec2 phoneme alignment as MFA fallback
+whisperx>=3.8.0
+
+# Note: Montreal Forced Aligner (MFA) is installed via conda:
+#   conda install -c conda-forge montreal-forced-aligner -y
+# AI4Bharat IndicMFA Hindi models downloaded manually
+# (see README.md Step I for full MFA setup)
+
+# ── TextGrid Parser (MFA output reader) ─────────────────────
+# praatio reads real .TextGrid files produced by MFA
+praatio>=6.0.0
 
 # ── NLP: Dependency Parsing ─────────────────────────────────
 stanza>=1.7.0
+
+# ── Surprisal: Language Model ───────────────────────────────
+# transformers loads Hindi GPT2 (surajp/gpt2-hindi)
+transformers>=4.48.0
+sentencepiece>=0.1.99
+tokenizers>=0.22.0
+safetensors>=0.4.0
+huggingface_hub>=0.20.0
+
+# ── Audio Processing ─────────────────────────────────────────
+librosa>=0.10.0
+soundfile>=0.12.0
+audioread>=3.0.0
 
 # ── Utilities ────────────────────────────────────────────────
 tqdm>=4.65.0
 colorama>=0.4.6
 regex>=2023.0.0
+filelock>=3.12.0
+packaging>=23.0
+PyYAML>=6.0.0
+requests>=2.28.0
